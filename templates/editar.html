@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar producto</title>
+</head>
+<body>
+    <h1>Agregar producto</h1>
+    <form action="{{url_for('editar')}}" method="POST">
+        Nombre: <input type="text" name="nombre" value="{{producto['nombre']}}"required><br>
+        Cantidad: <input type="text" name="Cantidad" value="{{producto['Cantidad']}}"required><br>
+        Precio: <input type="text" name="Precio" value="{{producto['Precio']}}"required><br>
+        Fecha_vencimiento: <input type="text" name="Fecha_vencimiento" value="{{producto['Fecha_vencimiento']}}"required><br>
+        Categoria: <input type="text" name="Categoria" value="{{producto['Categoria']}}"required><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

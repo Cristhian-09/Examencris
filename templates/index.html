@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h3>SEGUNDO PARCIAL TEM-742</h3>
+    <H4>NOMBRE: FRANZ CRISTHIAN HUANCA CORINI</H4>
+    <H4>CARNET: 12363769</H4>
+    
+    <h1>Gestion de producto</h1>
+    <a href="{{ url_for('agregar')}}">Agregar</a>
+    <br>
+    <br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha_vencimiento</th>
+            <th>Categoria</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for item in producto %}
+
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.precio }}</td>
+            <td>{{ item.fecha_vencimiento }}</td>
+            <td><a href="{{ url_for('editar',id=producto.id)}}">editar</a></td>
+            <td>
+                <form action="{{ url_for('eliminar',id=item.id)}}" method="POST">
+                    <input type="submit" value="eliminar">
+                </form>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+</body>
+</html>

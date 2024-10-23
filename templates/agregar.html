@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="eS">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar producto</title>
+</head>
+<body>
+    <h1>Agregar producto</h1>
+    <form action="{{ url_for('agregar')}}" method="POST">
+        Nombre: <input type="text" name="nombre" placeholder="nombre" required><br>
+        Cantidad: <input type="number" name="cantidad" placeholder="cantidad"><br>
+        Precio: <input type="number" step="0.01" name="Precio" placeholder="precio"><br>
+        Fecha_vencimiento: <input type="date" name="Fecha_vencimiento" placeholder="fecha_vencimiento"><br>
+        Categoria: <input type="text" name="Categoria" placeholder="Categoria"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
